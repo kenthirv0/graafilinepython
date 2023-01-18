@@ -5,13 +5,16 @@
 from tkinter import *
 import time
 
+list=[]
 def alarm():
     alarm_count = int(e1.get())
     i = 0
     while i < alarm_count:
-        l2.config(text="Tõuse ja sära!\n")
+        list.append("Tõuse ja sära!\n")
+        vahe=""
+        lause=vahe.join(list)
+        l2.config(text=lause)
         i += 1
-        time.sleep(0)
     
 root = Tk()
 root.geometry("300x200")
@@ -28,5 +31,7 @@ b1.grid(row=1, column=0, columnspan=2)
 
 l2 = Label(root, text="")
 l2.grid(row=2, column=0, columnspan=2)
+
+list.clear()
 
 root.mainloop()
